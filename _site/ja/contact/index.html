@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>お問い合わせ | Inoue Consulting</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/ja/">日本語</a> | <a href="/en/">English</a> |
+        <a href="/ja/about/">私について</a> |   <!-- ← ここ追加 -->
+        <a href="/ja/services/">サービス</a> |
+        <a href="/ja/blog/">ブログ</a> |
+        <a href="/ja/contact/">お問い合わせ</a>
+      </nav>
+    </header>
+    <main><h1>お問い合わせ</h1>
+<form name="contact-ja" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="contact-ja">
+  <p hidden><input name="bot-field"></p>
+
+  <p>お名前<br><input name="name" required></p>
+  <p>メール<br><input type="email" name="email" required></p>
+  <p>ご相談内容<br><textarea name="message" required></textarea></p>
+  <button type="submit">送信</button>
+</form>
+
+<p style="margin-top:1rem">
+  <a class="cta" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/your-id/30min'});return false;">無料相談（30分）を予約</a>
+</p></main>
+    <footer>
+      <p>&copy; 2025 Inoue Consulting</p>
+    </footer>
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
+  </body>
+</html>

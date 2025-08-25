@@ -1,0 +1,25 @@
+{
+  "name": "inoue-consulting-site",
+  "version": "1.0.0",
+  "description": "Business website for Inoue Consulting built with Eleventy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micmic210/inoue-consulting-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/micmic210/inoue-consulting-site/issues"
+  },
+  "homepage": "https://github.com/micmic210/inoue-consulting-site#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

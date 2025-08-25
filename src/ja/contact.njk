@@ -1,0 +1,19 @@
+---
+layout: base.njk
+title: お問い合わせ
+lang: ja
+---
+<h1>お問い合わせ</h1>
+<form name="contact-ja" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="contact-ja">
+  <p hidden><input name="bot-field"></p>
+
+  <p>お名前<br><input name="name" required></p>
+  <p>メール<br><input type="email" name="email" required></p>
+  <p>ご相談内容<br><textarea name="message" required></textarea></p>
+  <button type="submit">送信</button>
+</form>
+
+<p style="margin-top:1rem">
+  <a class="cta" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/your-id/30min'});return false;">無料相談（30分）を予約</a>
+</p>

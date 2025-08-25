@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ lang | default('ja') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if title %}{{ title }} | {% endif %}Inoue Consulting</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/ja/">日本語</a> | <a href="/en/">English</a> |
+        <a href="/ja/about/">私について</a> |   <!-- ← ここ追加 -->
+        <a href="/ja/services/">サービス</a> |
+        <a href="/ja/blog/">ブログ</a> |
+        <a href="/ja/contact/">お問い合わせ</a>
+      </nav>
+    </header>
+    <main>{{ content | safe }}</main>
+    <footer>
+      <p>&copy; {% year %} Inoue Consulting</p>
+    </footer>
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
+  </body>
+</html>
