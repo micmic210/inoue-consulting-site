@@ -1,33 +1,52 @@
+:root {
+    --brand: #0a66c2;
+}
+
+/* ===== Font settings ===== */
 body {
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'Noto Sans JP', system-ui, -apple-system, sans-serif;
+    color: #222;
     line-height: 1.7;
-    margin: 0;
-    color: #222
 }
 
-header,
-footer {
-    padding: 16px 24px;
-    background: #f6f6f6
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
 }
 
-main {
-    max-width: 980px;
-    margin: 32px auto;
-    padding: 0 16px
+/* ===== Layout ===== */
+.site-header,
+.site-footer {
+    background: #f6f6f6;
 }
 
-h1 {
+.site-main {}
+
+/* ===== Hero section heading ===== */
+.hero h1 {
     font-size: clamp(28px, 4vw, 40px);
     line-height: 1.2;
-    margin: 24px 0
+    margin: 24px 0;
 }
 
-.cta {
+/* ===== CTA button ===== */
+a.cta {
     display: inline-block;
     padding: 10px 16px;
     border-radius: 8px;
-    background: #0a66c2;
+    background: var(--brand);
     color: #fff;
-    text-decoration: none
+    text-decoration: none;
+}
+
+a.cta:hover {
+    opacity: 0.9;
+}
+
+/* ===== Images ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }

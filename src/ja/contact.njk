@@ -3,17 +3,45 @@ layout: base.njk
 title: お問い合わせ
 lang: ja
 ---
-<h1>お問い合わせ</h1>
-<form name="contact-ja" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="contact-ja">
-  <p hidden><input name="bot-field"></p>
 
-  <p>お名前<br><input name="name" required></p>
-  <p>メール<br><input type="email" name="email" required></p>
-  <p>ご相談内容<br><textarea name="message" required></textarea></p>
-  <button type="submit">送信</button>
-</form>
+<section class="container my-5" style="max-width: 720px;">
+  <h1 class="h2 mb-4 text-center">お問い合わせ</h1>
 
-<p style="margin-top:1rem">
-  <a class="cta" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/your-id/30min'});return false;">無料相談（30分）を予約</a>
-</p>
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <form name="contact-ja" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact-ja" />
+        <p class="visually-hidden"><input name="bot-field" /></p>
+
+        <div class="mb-3">
+          <label class="form-label">お名前</label>
+          <input class="form-control" name="name" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">メール</label>
+          <input class="form-control" type="email" name="email" required />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">ご相談内容</label>
+          <textarea class="form-control" name="message" rows="5" required></textarea>
+        </div>
+
+        <button class="btn btn-primary">
+          <i class="fa-regular fa-envelope me-2"></i>送信
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ポップアップ型（クリックでCalendlyを開く） -->
+  <p class="text-center">
+    <a class="btn btn-outline-primary btn-lg"
+       href="#"
+       onclick="Calendly.initPopupWidget({url: 'https://calendly.com/your-id/30min'}); return false;">
+      <i class="fa-regular fa-calendar me-2"></i>無料相談（30分）を予約
+    </a>
+  </p>
+
+</section>
