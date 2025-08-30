@@ -6,6 +6,47 @@
 
     <title>{% if title %}{{ title }} | {% endif %}Inoue Consulting</title>
 
+    <!-- SEO Meta -->
+    <meta
+      name="description"
+      content="Inoue Consultingは20年以上の国際ビジネス経験とITスキルを活かし、日本企業の欧州進出・欧州企業の日本進出を通訳・翻訳・海外営業支援・ITソリューションでサポートします。"
+    />
+    <meta
+      name="keywords"
+      content="通訳, 翻訳, ビジネス支援, 日本企業, 欧州進出, ITソリューション, デュッセルドルフ"
+    />
+    <meta name="author" content="Michiko Inoue" />
+
+    <!-- Open Graph (Facebook/LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Inoue Consulting" />
+    <meta
+      property="og:description"
+      content="日本と欧州をつなぐ国際ビジネスの架け橋。通訳・翻訳・ITソリューションを提供します。"
+    />
+    <meta property="og:url" content="https://michikoconsulting.com" />
+    <meta property="og:image" content="/assets/hero-dusseldorf-sm.webp" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Inoue Consulting" />
+    <meta
+      name="twitter:description"
+      content="日本と欧州をつなぐ国際ビジネス支援 - Inoue Consulting"
+    />
+    <meta name="twitter:image" content="/assets/hero-dusseldorf-sm.webp" />
+
+    <!-- hreflang for SEO -->
+    {% if lang == "ja" %}
+      {% set altUrl = page.url | replace('/ja/', '/en/') %}
+      <link rel="alternate" hreflang="ja" href="{{ page.url }}" />
+      <link rel="alternate" hreflang="en" href="{{ altUrl }}" />
+    {% else %}
+      {% set altUrl = page.url | replace('/en/', '/ja/') %}
+      <link rel="alternate" hreflang="en" href="{{ page.url }}" />
+      <link rel="alternate" hreflang="ja" href="{{ altUrl }}" />
+    {% endif %}
+
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
@@ -24,6 +65,7 @@
       rel="stylesheet"
     />
 
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/style.css" />
 
     <!-- Calendly CSS -->
@@ -34,33 +76,85 @@
   </head>
 
   <body>
-    <header class="site-header bg-light">
-      <nav class="container py-2 d-flex gap-3 flex-wrap">
-        <a href="/ja/">日本語</a> | <a href="/en/">English</a> |
-        <a href="/ja/about/">私について</a> |
-        <a href="/ja/services/">サービス</a> |
-        <a href="/ja/blog/">ブログ</a> |
-        <a href="/ja/contact/">お問い合わせ</a>
+    <header class="site-header">
+      {% if lang == "ja" %}
+        {% set otherUrl = page.url | replace('/ja/', '/en/') %}
+        {% set otherLabel = 'English' %}
+      {% else %}
+        {% set otherUrl = page.url | replace('/en/', '/ja/') %}
+        {% set otherLabel = '日本語' %}
+      {% endif %}
+
+      <nav class="nav-wrap">
+        <div class="nav-left">
+          {% if lang == "ja" %}
+            <a href="/ja/">ホーム</a>
+            <a href="/ja/about/">プロフィール</a>
+            <div class="dropdown">
+              <a class="dropdown-toggle" href="#" id="navServicesJa" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">サービス</a>
+              <ul class="dropdown-menu" aria-labelledby="navServicesJa">
+                <li><a class="dropdown-item" href="/ja/services/interpreting/">通訳</a></li>
+                <li><a class="dropdown-item" href="/ja/services/translation/">翻訳</a></li>
+                <li><a class="dropdown-item" href="/ja/services/biz-support/">海外ビジネスサポート</a></li>
+                <li><a class="dropdown-item" href="/ja/services/it/">IT・デジタル</a></li>
+              </ul>
+            </div>            
+            <a href="/ja/blog/">ブログ</a>
+            <a href="/ja/contact/">お問い合わせ</a>
+          {% else %}
+            <a href="/en/">Home</a>
+            <a href="/en/about/">About me</a>
+            <a href="/en/services/">Services</a>
+            <a href="/en/blog/">Blog</a>
+            <a href="/en/contact/">Contact</a>
+          {% endif %}
+        </div>
+
+        <div class="nav-right">
+          <a
+            class="lang-switch"
+            href="{{ otherUrl }}"
+            aria-label="Switch language"
+          >
+            {{ otherLabel }}
+          </a>
+        </div>
       </nav>
     </header>
 
-    <main class="site-main container py-4">
+    <main class="site-main py-4">
       {{ content | safe }}
     </main>
 
-    <footer class="site-footer bg-light">
-      <div class="container py-3">
-        <p class="m-0">&copy; {% year %} Inoue Consulting</p>
+    <footer class="site-footer">
+      <div class="container">
+        {% if lang == "ja" %}
+        <p>
+          <a href="/ja/privacy/">個人情報保護方針</a> |
+          <a href="/ja/cookies/">クッキーポリシー</a> |
+          <a href="/ja/imprint/">サイト運営者情報</a>
+        </p>
+        <p class="footer-meta">© 2025 Inoue Consulting. All rights reserved.</p>
+      {% else %}
+        <p>
+          <a href="/en/privacy/">Privacy Policy</a> |
+          <a href="/en/cookies/">Cookie Policy</a> |
+          <a href="/en/imprint/">Legal Notice</a>
+        </p>
+        <p class="footer-meta">© 2025 Inoue Consulting. All rights reserved.</p>
+      {% endif %}
       </div>
     </footer>
 
-    <!-- Bootstrap JS-->
+
+    <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
 
-    <!-- Calendly JS（asyncでOK）-->
+    <!-- Calendly JS -->
     <script
       src="https://assets.calendly.com/assets/external/widget.js"
       async
