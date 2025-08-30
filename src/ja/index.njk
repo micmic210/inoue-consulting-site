@@ -3,44 +3,208 @@ layout: base.njk
 title: ホーム
 lang: ja
 ---
-<section class="text-center my-5">
-  <h1 class="display-5 fw-semibold mb-3">20年以上の国際ビジネス経験とITスキルで、<br class="d-none d-md-block">日本企業の欧州進出をトータルサポートします。</h1>
-  <p class="lead mb-4">通訳・翻訳、海外営業支援、ITソリューションを通じて、日欧間ビジネスの架け橋となります。</p>
-  <a class="btn btn-primary btn-lg" href="/ja/contact/">無料相談を予約</a>
+<section class="hero-full" aria-label="Düsseldorf skyline hero">
+  <div class="container py-5">
+    <h1 class="display-5 fw-semibold mb-3">
+      20年以上の国際ビジネス経験とITスキルで、<br class="d-none d-md-inline">
+      日本企業の欧州進出をトータルサポートします。
+    </h1>
+    <p class="lead mb-4">
+      通訳・翻訳、海外営業支援、ITソリューションを通じて、日欧間ビジネスの架け橋となります。
+    </p>
+    <div class="d-flex gap-3 justify-content-center">
+      <a class="btn btn-primary btn-lg" href="/ja/contact/">無料相談を予約</a>
+      <a class="btn btn-outline-light btn-lg" href="/ja/services/">サービスを見る</a>
+    </div>
+  </div>
 </section>
 
-<section class="my-5">
-  <h2 class="h3 text-center mb-4">国際ビジネスのための包括的サポート</h2>
-  <p class="text-center text-muted mb-4">言葉の壁を超え、現場に寄り添うサポートで、日本と欧州のビジネスを円滑に進めます。</p>
+<section class="container my-5" id="services">
+  <h2 class="h3 text-center mb-2">国際ビジネスのための包括的サポート</h2>
+  <p class="text-center text-muted mb-4">
+    言葉の壁を超え、現場に寄り添うサポートで、日本と欧州のビジネスを円滑に進めます。
+  </p>
 
-  <div class="row g-3">
-    <div class="col-md-6 col-lg-3">
-      <div class="border rounded-3 h-100 p-3">
-        <h3 class="h5">通訳（展示会・商談・技術）</h3>
-        <p class="mb-3">重要な商談や展示会で、正確な通訳で成功を支援。</p>
-        <a class="link-primary" href="/ja/services/interpreting/">詳しく見る →</a>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <!-- 通訳 -->
+    <div class="col">
+      <div class="card service-thumb h-100 shadow-sm border-0 rounded-3">
+        <div class="ratio ratio-4x3">
+          <img src="/assets/auto-sm.webp" alt="展示会・商談での通訳サポート" class="w-100 h-100">
+        </div>
+        <div class="card-body">
+          <h3 class="h5 mb-2">通訳（展示会・商談・技術）</h3>
+          <p class="text-muted mb-3">重要な交渉や現場説明を、確かな通訳で支援します。</p>
+          <a href="/ja/services/interpreting/" class="btn btn-outline-brown">詳細はこちら</a>
+          <a href="/ja/services/interpreting/" class="stretched-link" aria-label="通訳サービス 詳細へ"></a>
+        </div>
       </div>
     </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="border rounded-3 h-100 p-3">
-        <h3 class="h5">翻訳（ビジネス・技術文書）</h3>
-        <p class="mb-3">契約書や技術資料を専門知識で正確に翻訳。</p>
-        <a class="link-primary" href="/ja/services/translation/">詳しく見る →</a>
+
+    <!-- 翻訳 -->
+    <div class="col">
+      <div class="card service-thumb h-100 shadow-sm border-0 rounded-3">
+        <div class="ratio ratio-4x3">
+          <img src="/assets/translation.webp" alt="契約書・技術文書の翻訳" class="w-100 h-100">
+        </div>
+        <div class="card-body">
+          <h3 class="h5 mb-2">翻訳（ビジネス・技術文書）</h3>
+          <p class="text-muted mb-3">契約書、仕様書、PPAP 等を業界知識に基づき正確に。</p>
+          <a href="/ja/services/translation/" class="btn btn-outline-brown">詳細はこちら</a>
+          <a href="/ja/services/translation/" class="stretched-link" aria-label="翻訳サービス 詳細へ"></a>
+        </div>
       </div>
     </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="border rounded-3 h-100 p-3">
-        <h3 class="h5">海外ビジネス支援</h3>
-        <p class="mb-3">市場調査、営業窓口、視察同行など現地支援。</p>
-        <a class="link-primary" href="/ja/services/biz-support/">詳しく見る →</a>
+
+    <!-- 海外ビジネス支援 -->
+    <div class="col">
+      <div class="card service-thumb h-100 shadow-sm border-0 rounded-3">
+        <div class="ratio ratio-4x3">
+          <img src="/assets/support.webp" alt="欧州での市場開拓・現地支援" class="w-100 h-100">
+        </div>
+        <div class="card-body">
+          <h3 class="h5 mb-2">海外ビジネス支援</h3>
+          <p class="text-muted mb-3">市場調査、営業窓口、視察同行など現地で伴走。</p>
+          <a href="/ja/services/biz-support/" class="btn btn-outline-brown">詳細はこちら</a>
+          <a href="/ja/services/biz-support/" class="stretched-link" aria-label="海外ビジネス支援 詳細へ"></a>
+        </div>
       </div>
     </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="border rounded-3 h-100 p-3">
-        <h3 class="h5">IT・デジタル</h3>
-        <p class="mb-3">多言語Webとデータ活用で可視性と成果を向上。</p>
-        <a class="link-primary" href="/ja/services/it/">詳しく見る →</a>
+
+    <!-- IT・デジタル -->
+    <div class="col">
+      <div class="card service-thumb h-100 shadow-sm border-0 rounded-3">
+        <div class="ratio ratio-4x3">
+          <img src="/assets/it.webp" alt="Web・データ活用などIT支援" class="w-100 h-100">
+        </div>
+        <div class="card-body">
+          <h3 class="h5 mb-2">IT・デジタル</h3>
+          <p class="text-muted mb-3">多言語Webや業務の可視化で成果に直結。</p>
+          <a href="/ja/services/it/" class="btn btn-outline-brown">詳細はこちら</a>
+          <a href="/ja/services/it/" class="stretched-link" aria-label="IT・デジタルソリューション 詳細へ"></a>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-5" id="benefits" aria-labelledby="benefits-title">
+  <h2 id="benefits-title" class="h3 text-center mb-2">選ばれる理由</h2>
+  <p class="text-center text-muted mb-4">現場対応力と正確さで、国際ビジネスを確実に前に進めます。</p>
+
+  <div class="row benefit-grid">
+    <!-- 1 -->
+    <div class="col-12 col-md-4">
+      <div class="benefit-card h-100 text-center p-4">
+        <div class="benefit-icon"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></div>
+        <h3 class="h6 mt-3 mb-1">展示会・商談に強い</h3>
+        <p class="text-muted small mb-0">現場での交渉・技術説明・突発対応まで一気通貫。</p>
+        <p class="text-muted small mb-0">その場で意思決定を進める通訳・ファシリが可能。</p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="col-12 col-md-4">
+      <div class="benefit-card h-100 text-center p-4">
+        <div class="benefit-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div>
+        <h3 class="h6 mt-3 mb-1">製造業・技術文書に精通</h3>
+        <p class="text-muted small mb-0">PPAP／図面／仕様書の語彙・文脈を理解。</p>
+        <p class="text-muted small mb-0">「正確さ×実務で使える表現」に最適化。</p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="col-12 col-md-4">
+      <div class="benefit-card h-100 text-center p-4">
+        <div class="benefit-icon"><i class="fa-solid fa-globe-europe" aria-hidden="true"></i></div>
+        <h3 class="h6 mt-3 mb-1">欧州現地から迅速対応</h3>
+        <p class="text-muted small mb-0">デュッセルドルフ拠点。時差・移動のロスを最小化。</p>
+        <p class="text-muted small mb-0">現地ネットワークで実務の前進を支援。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Cases (2×2) ===== -->
+<section class="container my-5" id="cases" aria-labelledby="cases-title">
+  <h2 id="cases-title" class="h3 text-center mb-2">実績・レポート</h2>
+  <p class="text-center text-muted mb-4">展示会対応や視察同行など、現場からのハイライトをご紹介します。</p>
+
+  <div class="row g-4">
+    <!-- 1. 見本市 -->
+    <div class="col-12 col-md-6">
+      <div class="card h-100 shadow-sm border-0 case-card">
+        <div class="case-media">
+          <img src="/assets/messe-dus.webp" alt="見本市：技術商談サポート">
+        </div>
+        <div class="card-body">
+          <h3 class="case-title mb-2">見本市：技術商談サポート</h3>
+          <p class="case-text mb-0">
+            製造設備のデモ説明と価格交渉を通訳。要点整理で合意事項を明確化し、フォローアップにつなげました。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 工場視察 -->
+    <div class="col-12 col-md-6">
+      <div class="card h-100 shadow-sm border-0 case-card">
+        <div class="case-media">
+          <img src="/assets/factory-visit.webp" alt="工場視察：品質監査の立会い（代表例）">
+        </div>
+        <div class="card-body">
+          <h3 class="case-title mb-2">工場視察：品質監査の立会い（代表例）</h3>
+          <p class="case-text mb-0">
+            品質要件のすり合わせや現場ヒアリングを支援。改善点を当日合意し、是正計画のドラフト作成まで伴走しました。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 翻訳実績 -->
+    <div class="col-12 col-md-6">
+      <div class="card h-100 shadow-sm border-0 case-card">
+        <div class="case-media">
+          <img src="/assets/translation-2.webp" alt="翻訳実績：PPAP関連書類（代表例）">
+        </div>
+        <div class="card-body">
+          <h3 class="case-title mb-2">翻訳実績：PPAP関連書類（代表例）</h3>
+          <p class="case-text mb-0">
+            提出前レビューを含め用語を統一。不明点を事前に洗い出し、差戻しゼロの短納期納品を実現しました。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ミニレポート -->
+    <div class="col-12 col-md-6">
+      <div class="card h-100 shadow-sm border-0 case-card">
+        <div class="case-media">
+          <img src="/assets/prowein.webp" alt="ミニレポート：欧州展示会トレンド">
+        </div>
+        <div class="card-body">
+          <h3 class="case-title mb-2">ミニレポート：欧州展示会トレンド</h3>
+          <p class="case-text mb-0">
+            EV部品や小ロット試作の引き合い増加など、現地展示会での変化を短く整理。詳しい所感はブログをご覧ください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a class="btn btn-outline-secondary" href="/ja/blog/">もっと見る</a>
+  </div>
+</section>
+
+<section class="cta-band my-5" aria-label="無料相談 CTA">
+  <div class="container py-5 text-center">
+    <h2 class="h4 text-white mb-2">まずは無料相談から</h2>
+    <p class="text-white-50 mb-4">課題の共有だけでもOK。最適な進め方をご提案します。</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a class="btn btn-light btn-lg" href="https://calendly.com/your-link" target="_blank" rel="noopener">Calendlyで予約</a>
+      <a class="btn btn-outline-light btn-lg" href="/ja/contact/">お問い合わせ</a>
     </div>
   </div>
 </section>
