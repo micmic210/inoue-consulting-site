@@ -4,44 +4,80 @@ title: お問い合わせ
 lang: ja
 ---
 
-<section class="container my-5" style="max-width: 720px;">
-  <h1 class="h2 mb-4 text-center">お問い合わせ</h1>
+<div id="contact-page">
+  <!-- Page header -->
+  <section class="container page-intro">
+    <h1 class="text-center">お問い合わせ</h1>
+  </section>
 
-  <div class="card shadow-sm mb-4">
-    <div class="card-body">
-      <form name="contact-ja" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact-ja" />
-        <p class="visually-hidden"><input name="bot-field" /></p>
+  <!-- Main -->
+  <section class="container">
+    <div class="contact-grid">
+      <!-- LEFT: Form (span=3) -->
+      <div class="contact-card">
+        <h2 class="card-title">お問い合わせフォーム</h2>
 
-        <div class="mb-3">
-          <label class="form-label">お名前</label>
-          <input class="form-control" name="name" required />
+        <form action="/api/contact" method="post" novalidate>
+          <!-- honeypot -->
+          <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" class="hp">
+
+          <div class="mb-3">
+            <label for="name" class="form-label">お名前 <span class="req">*</span></label>
+            <input id="name" name="name" type="text" class="form-control" required placeholder="山田 太郎">
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">メール <span class="req">*</span></label>
+            <input id="email" name="email" type="email" class="form-control" required placeholder="you@example.com">
+          </div>
+
+          <div class="mb-3">
+            <label for="topic" class="form-label">ご用件（相談内容）</label>
+            <select id="topic" name="topic" class="form-select">
+              <option value="" selected>選択してください</option>
+              <option>通訳（展示会・商談・技術）</option>
+              <option>翻訳</option>
+              <option>ビジネスサポート</option>
+              <option>IT / ウェブサポート</option>
+              <option>その他</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label for="message" class="form-label">詳細</label>
+            <textarea id="message" name="message" rows="6" class="form-control" placeholder="ご希望の日時・場所、対象、希望言語（例：日英）、背景などをご記入ください。"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-envelope-fill me-1" aria-hidden="true"></i> 送信
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: Sidebar (info + CTA) -->
+      <aside class="side">
+        <div class="contact-info">
+          <h2 class="side-title">連絡先</h2>
+          <p class="brand">Inoue Consulting &amp; Solutions</p>
+          <p class="line">Düsseldorf, Germany</p>
+          <p class="line">
+            Email:
+            <a href="mailto:XXXX@gmail.com">XXXX@gmail.com</a>
+          </p>
         </div>
 
-        <div class="mb-3">
-          <label class="form-label">メール</label>
-          <input class="form-control" type="email" name="email" required />
+        <!-- CTA placed under the info (desktop).
+             On mobile, this appears BEFORE the info (see CSS order). -->
+        <div class="cta-wrap">
+          <a class="btn-cta" href="https://calendly.com/" target="_blank" rel="noopener">
+            <span class="cta-ico" aria-hidden="true">📅</span>
+            無料相談（30分）を予約
+          </a>
+          <p class="cta-note">Zoom / Google Meet に対応しています</p>
         </div>
-
-        <div class="mb-3">
-          <label class="form-label">ご相談内容</label>
-          <textarea class="form-control" name="message" rows="5" required></textarea>
-        </div>
-
-        <button class="btn btn-primary">
-          <i class="fa-regular fa-envelope me-2"></i>送信
-        </button>
-      </form>
+      </aside>
     </div>
-  </div>
-
-  <!-- ポップアップ型（クリックでCalendlyを開く） -->
-  <p class="text-center">
-    <a class="btn btn-outline-primary btn-lg"
-       href="#"
-       onclick="Calendly.initPopupWidget({url: 'https://calendly.com/your-id/30min'}); return false;">
-      <i class="fa-regular fa-calendar me-2"></i>無料相談（30分）を予約
-    </a>
-  </p>
-
-</section>
+  </section>
+</div>
