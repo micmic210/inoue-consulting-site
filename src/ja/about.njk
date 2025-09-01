@@ -1,9 +1,58 @@
 ---
 layout: base.njk
-title: 私について
+title: プロフィール
 lang: ja
 ---
-<h1>私について</h1>
-<p>井上美智子。日欧ビジネス支援・通訳翻訳・ITのハイブリッド背景を活かし、現場密着で成果に直結する支援を提供します。</p>
-<p>拠点：デュッセルドルフ / 対応言語：日本語・英語</p>
-<p><a class="cta" href="/ja/contact/">お問い合わせ</a></p>
+
+<div id="about-page">
+  <!-- Page header -->
+  <section class="container page-intro">
+    <h1 class="text-center">プロフィール</h1>
+  </section>
+
+  <!-- Main -->
+  <section class="container">
+    <div class="about-grid">
+      <!-- LEFT: Text -->
+      <article class="about-body">
+        <p class="lede">
+          自動車業界で20年以上、<strong>商品企画・海外営業・品質保証</strong>を経験し、北米・中国・東南アジアなど多様な市場でプロジェクトを担当しました。米国窓口として英語での交渉や調整をリードし、社内の日本人技術者・関係者とのリエゾンも数多く務めてきました。
+        </p>
+        <p>
+          現在はドイツ・デュッセルドルフを拠点に、<strong>展示会・工場視察・商談の逐次通訳や翻訳、現地ビジネスサポート</strong>を提供しています。欧州の商習慣や文化を理解しながら、日欧間の橋渡し役として、言葉だけでなく「成果に直結する支援」を行います。
+        </p>
+        <p>
+          業界経験と現場対応力を兼ね備え、<strong>安心して任せられるパートナー</strong>としてお客様のビジネスをサポートします。
+        </p>
+
+        <!-- Actions -->
+        <div class="about-actions">
+          <a class="btn-cta-primary" href="/ja/contact/">お問い合わせ</a>
+          <a class="btn-cta-secondary" href="https://calendly.com/" target="_blank" rel="noopener">
+            無料相談（30分）を予約
+          </a>
+        </div>
+      </article>
+
+      <!-- RIGHT: Photo (circular) -->
+      <aside class="about-photo">
+        <img src="/assets/profile.webp" alt="井上美智子の写真" width="360" height="360">
+      </aside>
+    </div>
+  </section>
+
+  <!-- Schema.org Person (minimal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Michiko Inoue",
+    "jobTitle": "Business Support / Interpreter / Translator",
+    "worksFor": { "@type": "Organization", "name": "Inoue Consulting & Solutions" },
+    "knowsLanguage": ["ja", "en"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Düsseldorf", "addressCountry": "DE" },
+    "image": "/assets/profile.webp",
+    "url": "/ja/about/"
+  }
+  </script>
+</div>

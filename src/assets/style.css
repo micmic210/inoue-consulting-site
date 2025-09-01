@@ -745,3 +745,132 @@ img {
         justify-content: center;
     }
 }
+
+/* ===== About/Profile page (scoped) ===== */
+
+#about-page .page-intro {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+#about-page h1 {
+    font-size: clamp(1.6rem, 2.6vw, 2rem);
+    line-height: 1.25;
+}
+
+/* 3:2 split grid */
+#about-page .about-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    align-items: start;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+/* Left text column */
+#about-page .about-body {
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0.25rem 0.25rem 0;
+}
+
+#about-page .lede {
+    font-size: clamp(1rem, 1.1vw, 1.05rem);
+    line-height: 1.75;
+    margin: .2rem 0 .9rem;
+}
+
+#about-page .about-body p {
+    margin: 0 0 .9rem;
+}
+
+/* Actions */
+#about-page .about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .65rem;
+    margin-top: 1.6rem;
+}
+
+#about-page .btn-cta-primary,
+#about-page .btn-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .7rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    transition: transform .16s ease, box-shadow .16s ease, opacity .16s ease;
+}
+
+#about-page .btn-cta-primary {
+    background: var(--accent);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, .05);
+}
+
+#about-page .btn-cta-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
+}
+
+#about-page .btn-cta-secondary {
+    background: var(--primary);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+}
+
+#about-page .btn-cta-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .09);
+}
+
+/* Right photo column: smaller circular portrait */
+#about-page .about-photo {
+    display: grid;
+    place-items: center;
+}
+
+#about-page .about-photo img {
+    width: min(100%, 180px);
+    /* ← さらに小さく */
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .05);
+    /* 軽め */
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    #about-page .about-grid {
+        grid-template-columns: 1fr;
+        max-width: 760px;
+    }
+
+    #about-page .about-photo {
+        order: -1;
+        margin-bottom: .75rem;
+    }
+
+    #about-page .btn-cta-primary,
+    #about-page .btn-cta-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #about-page .page-intro {
+        margin-top: 2.8rem;
+    }
+
+    #about-page .about-photo img {
+        width: min(100%, 160px);
+    }
+
+}
