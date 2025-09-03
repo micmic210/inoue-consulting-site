@@ -1,0 +1,54 @@
+---
+layout: base.njk
+---
+
+<div id="post-page">
+  <!-- タイトル -->
+  <section class="container page-intro">
+    <h1 class="text-center">{{ title }}</h1>
+  </section>
+
+  <!-- カバー画像 -->
+  {% if cover %}
+  <section class="container">
+    <figure class="cover">
+      <img
+        src="{{ cover }}"
+        alt="{{ title }}"
+        loading="lazy"
+        decoding="async"
+        width="1600" height="1067"
+      >
+    </figure>
+  </section>
+  {% endif %}
+
+  <!-- 本文 -->
+  <section class="container">
+    <article class="post-body">
+      {{ content | safe }}
+    </article>
+  </section>
+
+  <!-- 前後ナビ + 一覧へ -->
+  <section class="container post-nav">
+    {% set posts = collections.blog_ja %}
+    {% set prev = null %}
+    {% set next = null %}
+    {% for p in posts %}
+      {% if p.url == page.url %}
+        {% set prev = posts[loop.index0 - 1] %}
+        {% set next = posts[loop.index0 + 1] %}
+      {% endif %}
+    {% endfor %}
+
+    <div class="nav-links">
+      {% if prev %}<a class="prev" href="{{ prev.url }}">&larr; {{ prev.data.title }}</a>{% else %}<span></span>{% endif %}
+      {% if next %}<a class="next" href="{{ next.url }}">{{ next.data.title }} &rarr;</a>{% endif %}
+    </div>
+
+    <div class="back-link">
+      <a href="/ja/blog/">← ブログ一覧に戻る</a>
+    </div>
+  </section>
+</div>
