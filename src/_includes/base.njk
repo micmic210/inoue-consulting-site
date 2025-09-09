@@ -76,6 +76,7 @@
   </head>
 
   <body>
+    <!-- ===== Header ===== -->
     <header class="site-header">
       {% if lang == "ja" %}
         {% set otherUrl = page.url | replace('/ja/', '/en/') %}
@@ -85,68 +86,84 @@
         {% set otherLabel = '日本語' %}
       {% endif %}
 
-      <nav class="nav-wrap">
-        <div class="nav-left">
-          {% if lang == "ja" %}
-            <a href="/ja/">ホーム</a>
-            <a href="/ja/about/">プロフィール</a>
-            <div class="dropdown">
-              <a class="dropdown-toggle" href="#" id="navServicesJa" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">サービス</a>
-              <ul class="dropdown-menu" aria-labelledby="navServicesJa">
-                <li><a class="dropdown-item" href="/ja/services/interpreting/">通訳</a></li>
-                <li><a class="dropdown-item" href="/ja/services/translation/">翻訳</a></li>
-                <li><a class="dropdown-item" href="/ja/services/biz-support/">海外ビジネスサポート</a></li>
-                <li><a class="dropdown-item" href="/ja/services/it/">IT・デジタル</a></li>
-              </ul>
-            </div>            
-            <a href="/ja/blog/">ブログ</a>
-            <a href="/ja/contact/">お問い合わせ</a>
-          {% else %}
-            <a href="/en/">Home</a>
-            <a href="/en/about/">About me</a>
-            <a href="/en/services/">Services</a>
-            <a href="/en/blog/">Blog</a>
-            <a href="/en/contact/">Contact</a>
-          {% endif %}
-        </div>
-
-        <div class="nav-right">
-          <a
-            class="lang-switch"
-            href="{{ otherUrl }}"
-            aria-label="Switch language"
-          >
-            {{ otherLabel }}
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+          <!-- Brand -->
+          <a class="navbar-brand" href="{% if lang == 'ja' %}/ja/{% else %}/en/{% endif %}">
+            Inoue Consulting
           </a>
+
+          <!-- Hamburger -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Menu -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              {% if lang == "ja" %}
+                <li class="nav-item"><a class="nav-link" href="/ja/">ホーム</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ja/about/">プロフィール</a></li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navServicesJa" role="button"
+                     data-bs-toggle="dropdown" aria-expanded="false">サービス</a>
+                  <ul class="dropdown-menu" aria-labelledby="navServicesJa">
+                    <li><a class="dropdown-item" href="/ja/services/interpreting/">通訳</a></li>
+                    <li><a class="dropdown-item" href="/ja/services/translation/">翻訳</a></li>
+                    <li><a class="dropdown-item" href="/ja/services/biz-support/">海外ビジネスサポート</a></li>
+                    <li><a class="dropdown-item" href="/ja/services/it/">IT・デジタル</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/ja/blog/">ブログ</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ja/contact/">お問い合わせ</a></li>
+              {% else %}
+                <li class="nav-item"><a class="nav-link" href="/en/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/en/about/">About me</a></li>
+                <li class="nav-item"><a class="nav-link" href="/en/services/">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="/en/blog/">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="/en/contact/">Contact</a></li>
+              {% endif %}
+            </ul>
+
+            <!-- Language switch -->
+            <div class="d-flex">
+              <a class="btn btn-outline-primary btn-sm lang-switch" href="{{ otherUrl }}" aria-label="Switch language">
+                {{ otherLabel }}
+              </a>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
 
+    <!-- ===== Main ===== -->
     <main class="site-main py-4">
       {{ content | safe }}
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        {% if lang == "ja" %}
-        <p>
-          <a href="/ja/privacy/">個人情報保護方針</a> |
-          <a href="/ja/cookies/">クッキーポリシー</a> |
-          <a href="/ja/imprint/">サイト運営者情報</a>
-        </p>
-        <p class="footer-meta">© 2025 Inoue Consulting. All rights reserved.</p>
-      {% else %}
-        <p>
-          <a href="/en/privacy/">Privacy Policy</a> |
-          <a href="/en/cookies/">Cookie Policy</a> |
-          <a href="/en/imprint/">Legal Notice</a>
-        </p>
-        <p class="footer-meta">© 2025 Inoue Consulting. All rights reserved.</p>
-      {% endif %}
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer py-3 mt-5">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <div class="footer-links mb-2 mb-md-0">
+          {% if lang == "ja" %}
+            <p class="mb-1">
+              <a href="/ja/privacy/">個人情報保護方針</a> |
+              <a href="/ja/cookies/">クッキーポリシー</a> |
+              <a href="/ja/imprint/">サイト運営者情報</a>
+            </p>
+            <p class="footer-meta mb-0">© 2025 Inoue Consulting. All rights reserved.</p>
+          {% else %}
+            <p class="mb-1">
+              <a href="/en/privacy/">Privacy Policy</a> |
+              <a href="/en/cookies/">Cookie Policy</a> |
+              <a href="/en/imprint/">Legal Notice</a>
+            </p>
+            <p class="footer-meta mb-0">© 2025 Inoue Consulting. All rights reserved.</p>
+          {% endif %}
+        </div>
       </div>
     </footer>
-
 
     <!-- Bootstrap JS -->
     <script

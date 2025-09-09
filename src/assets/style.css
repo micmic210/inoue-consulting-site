@@ -121,16 +121,22 @@ img {
 }
 
 /* ===========================
-   Footer
+   Footer (responsive layout)
    =========================== */
 .site-footer {
     background: var(--primary);
     color: #fff;
     border-top: 1px solid rgba(0, 0, 0, .06);
     padding: 1.75rem 1rem;
-    text-align: center;
     font-size: 0.9rem;
     margin-top: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    /* デフォルトは左寄せ */
 }
 
 .site-footer a {
@@ -146,9 +152,17 @@ img {
 }
 
 .site-footer .footer-meta {
-    margin-top: .5rem;
     font-size: .85rem;
     color: rgba(255, 255, 255, .85);
+}
+
+/* ===== Responsive Mobile ===== */
+@media (max-width: 575.98px) {
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
 }
 
 /* ===========================
@@ -878,9 +892,7 @@ img {
 #blog-page .page-intro {
     margin-top: 3rem;
     margin-bottom: 0;
-    /* ← 相殺を避けるため 0 に */
     padding-bottom: .75rem;
-    /* ← 見出しとカードの最小ギャップ */
 }
 
 #blog-page .blog-grid {
@@ -890,7 +902,6 @@ img {
     max-width: 1100px;
     margin-inline: auto;
     margin-top: 0;
-    /* ← 2つ目の section の上余白を打ち消す */
 }
 
 #blog-page .blog-card {
@@ -1070,3 +1081,4 @@ img {
 #post-page .back-link a:hover {
     background: var(--accent);
 }
+
