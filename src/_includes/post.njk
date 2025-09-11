@@ -32,7 +32,18 @@ layout: base.njk
 
   <!-- 前後ナビ + 一覧へ -->
   <section class="container post-nav">
-    {% set posts = collections.blog_ja %}
+    {# 言語ごとにコレクションと戻り先を切り替え #}
+    {% set currentLang = lang or page.lang or 'ja' %}
+    {% if currentLang == 'en' %}
+      {% set posts = collections.blog_en %}
+      {% set backUrl = '/en/blog/' %}
+      {% set backLabel = '← Back to Blog' %}
+    {% else %}
+      {% set posts = collections.blog_ja %}
+      {% set backUrl = '/ja/blog/' %}
+      {% set backLabel = '← ブログ一覧に戻る' %}
+    {% endif %}
+
     {% set prev = null %}
     {% set next = null %}
     {% for p in posts %}
@@ -43,12 +54,19 @@ layout: base.njk
     {% endfor %}
 
     <div class="nav-links">
-      {% if prev %}<a class="prev" href="{{ prev.url }}">&larr; {{ prev.data.title }}</a>{% else %}<span></span>{% endif %}
-      {% if next %}<a class="next" href="{{ next.url }}">{{ next.data.title }} &rarr;</a>{% endif %}
+      {% if prev %}
+        <a class="prev" href="{{ prev.url }}">&larr; {{ prev.data.title }}</a>
+      {% else %}
+        <span></span>
+      {% endif %}
+
+      {% if next %}
+        <a class="next" href="{{ next.url }}">{{ next.data.title }} &rarr;</a>
+      {% endif %}
     </div>
 
     <div class="back-link">
-      <a href="/ja/blog/">← ブログ一覧に戻る</a>
+      <a href="{{ backUrl }}">{{ backLabel }}</a>
     </div>
   </section>
 </div>

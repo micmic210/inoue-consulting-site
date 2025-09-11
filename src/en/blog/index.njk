@@ -1,0 +1,27 @@
+---
+layout: base.njk
+title: Blog
+lang: en
+---
+
+<div id="blog-page">
+  <section class="container page-intro">
+    <h1 class="text-center">Blog</h1>
+    <p class="text-center text-muted">Reports from trade fairs, site visits, and interpreting assignments</p>
+  </section>
+
+  <section class="container blog-grid">
+    {% for post in collections.blog_en %}
+      <article class="blog-card">
+        <div class="thumb">
+          <img src="{{ post.data.thumb or post.data.cover }}" alt="{{ post.data.title }}">
+        </div>
+        <div class="card-body">
+          <h2 class="post-title">{{ post.data.title }}</h2>
+          <p class="excerpt">{{ post.data.description }}</p>
+          <a class="btn-read" href="{{ post.url }}">Read More</a>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+</div>

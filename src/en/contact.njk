@@ -1,0 +1,90 @@
+---
+layout: base.njk
+title: Contact
+lang: en
+---
+
+<div id="contact-page">
+  <!-- Page header -->
+  <section class="container page-intro">
+    <h1 class="text-center">Contact</h1>
+  </section>
+
+  <!-- Main -->
+  <section class="container">
+    <div class="contact-grid">
+      <!-- LEFT: Form (span=3) -->
+      <div class="contact-card">
+        <h2 class="card-title">Contact Form</h2>
+
+        <form action="/api/contact" method="post" novalidate>
+          <!-- honeypot -->
+          <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" class="hp">
+
+          <p class="mb-2 small text-muted">Fields marked <span class="req">*</span> are required.</p>
+
+          <div class="mb-3">
+            <label for="name" class="form-label">Name <span class="req">*</span></label>
+            <input id="name" name="name" type="text" class="form-control" required placeholder="Taro Yamada">
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email <span class="req">*</span></label>
+            <input id="email" name="email" type="email" class="form-control" required placeholder="you@example.com">
+          </div>
+
+          <div class="mb-3">
+            <label for="topic" class="form-label">Topic</label>
+            <select id="topic" name="topic" class="form-select">
+              <option value="" selected>Please select</option>
+              <option>Interpreting (Trade Fairs / Meetings / Technical)</option>
+              <option>Translation</option>
+              <option>Business Support</option>
+              <option>IT / Web Support</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label for="message" class="form-label">Details</label>
+            <textarea id="message" name="message" rows="6" class="form-control" placeholder="Please include preferred date/time and location, subject matter, language pair (e.g., JA–EN), and any background or goals."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-envelope-fill me-1" aria-hidden="true"></i> Send
+            </button>
+          </div>
+
+          <!-- Optional short privacy note (kept light and friendly) -->
+          <p class="mt-2 small text-muted">
+            We’ll only use your information to respond to your inquiry.
+          </p>
+        </form>
+      </div>
+
+      <!-- RIGHT: Sidebar (info + CTA) -->
+      <aside class="side">
+        <div class="contact-info">
+          <h2 class="side-title">Contact Information</h2>
+          <p class="brand">Inoue Consulting &amp; Solutions</p>
+          <p class="line">Düsseldorf, Germany</p>
+          <p class="line">
+            Email:
+            <a href="mailto:XXXX@gmail.com">XXXX@gmail.com</a>
+          </p>
+        </div>
+
+        <!-- CTA placed under the info (desktop).
+             On mobile, this appears BEFORE the info (see CSS order). -->
+        <div class="cta-wrap">
+          <a class="btn-cta" href="https://calendly.com/" target="_blank" rel="noopener">
+            <span class="cta-ico" aria-hidden="true">📅</span>
+            Book a Free 30-Minute Consultation
+          </a>
+          <p class="cta-note">Available via Zoom / Google Meet</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</div>

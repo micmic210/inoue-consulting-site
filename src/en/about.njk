@@ -1,0 +1,58 @@
+---
+layout: base.njk
+title: About
+lang: en
+---
+
+<div id="about-page">
+  <!-- Page header -->
+  <section class="container page-intro">
+    <h1 class="text-center">About</h1>
+  </section>
+
+  <!-- Main -->
+  <section class="container">
+    <div class="about-grid">
+      <!-- LEFT: Text -->
+      <article class="about-body">
+        <p class="lede">
+          I bring over 20 years of experience in the automotive industry, working in <strong>product planning, international sales, and quality assurance</strong>. My career has taken me to North America, China, and Southeast Asia, where I managed projects and worked closely with international partners. Acting as the U.S. liaison, I often led negotiations in English and coordinated smoothly with Japanese engineers and stakeholders.
+        </p>
+        <p>
+          Now based in Düsseldorf, Germany, I support clients with <strong>interpreting, translation, and local business services</strong> at trade fairs, factory visits, and business meetings. Having worked across cultures, I understand both European and Japanese business practices, and I help you bridge the gap so that communication turns into real results.
+        </p>
+        <p>
+          My goal is to be a <strong>reliable partner you can count on</strong>—professional, approachable, and committed to making your international projects a success.
+        </p>
+
+        <!-- Actions -->
+        <div class="about-actions">
+          <a class="btn-cta-primary" href="/en/contact/">Contact</a>
+          <a class="btn-cta-secondary" href="https://calendly.com/" target="_blank" rel="noopener">
+            Book a Free 30-Minute Consultation
+          </a>
+        </div>
+      </article>
+
+      <!-- RIGHT: Photo (circular) -->
+      <aside class="about-photo">
+        <img src="/assets/profile.webp" alt="Photo of Michiko Inoue" width="360" height="360">
+      </aside>
+    </div>
+  </section>
+
+  <!-- Schema.org Person (minimal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Michiko Inoue",
+    "jobTitle": "Business Support / Interpreter / Translator",
+    "worksFor": { "@type": "Organization", "name": "Inoue Consulting & Solutions" },
+    "knowsLanguage": ["ja", "en"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Düsseldorf", "addressCountry": "DE" },
+    "image": "/assets/profile.webp",
+    "url": "/en/about/"
+  }
+  </script>
+</div>
